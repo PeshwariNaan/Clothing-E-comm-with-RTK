@@ -5,7 +5,9 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
@@ -36,19 +38,20 @@ export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 export const signInWithGoogleRedirect = () =>
   signInWithRedirect(auth, googleProvider);
-  
+
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (
-  userAuth, 
+  userAuth,
   additionalInfo = {}
-  ) => {
-  if(!userAuth) return;
+) => {
+  if (!userAuth) return;
 
   const userDocRef = doc(db, "users", userAuth.uid);
   const userSnapshot = await getDoc(userDocRef);
 
-  if (!userSnapshot.exists()) { //If user snapshot doesn't exist - create userDocRef    
+  if (!userSnapshot.exists()) {
+    //If user snapshot doesn't exist - create userDocRef
     const { displayName, email } = userAuth;
     const createdAt = new Date();
 
@@ -57,7 +60,7 @@ export const createUserDocumentFromAuth = async (
         displayName,
         email,
         createdAt,
-        ...additionalInfo
+        ...additionalInfo,
       });
     } catch (error) {
       console.log("Error creating user", error.message);
@@ -66,17 +69,23 @@ export const createUserDocumentFromAuth = async (
 
   //if user data exists
   return userDocRef;
-
 };
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
-  if(!email || !password) return;
+  if (!email || !password) return;
 
-    return await createUserWithEmailAndPassword(auth, email, password);
-}
+  return await createUserWithEmailAndPassword(auth, email, password);
+};
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
-  if(!email || !password) return;
+  if (!email || !password) return;
 
-    return await signInWithEmailAndPassword(auth, email, password);
-}
+  return await signInWithEmailAndPassword(auth, email, password);
+};
+
+//Built in function to sign-out of firebase but don't forget to setCurrentUser to null - we access this through useContext as well
+export const signOutUser = async () => signOut(auth);
+
+//This will call the callback when the state of the auth changes (on sign-in and sign-out for example) - this is always listening for changes.
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
