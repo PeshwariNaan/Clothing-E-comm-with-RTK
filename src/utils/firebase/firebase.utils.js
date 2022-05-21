@@ -15,7 +15,9 @@ import {
   getDoc,
   setDoc,
   collection,
-  writeBatch
+  writeBatch,
+  query,
+  getDocs,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -58,14 +60,32 @@ export const addCollectionAndDocuments = async (
 ) => {
   const batch = writeBatch(db);
   const collectionRef = collection(db, collectionKey);
-  
+
   objectsToAdd.forEach((object) => {
-     const docRef = doc(collectionRef, object.title.toLowerCase());
-     batch.set(docRef, object);
+    const docRef = doc(collectionRef, object.title.toLowerCase());
+    batch.set(docRef, object);
   });
 
   await batch.commit();
-  console.log('done');
+  console.log("done");
+};
+
+//Function to retrieve from firestore - need to import query and getDocs
+//This type of helper function isolates the areas that our application interfaces with things that change
+// i.e. third party libraries - bad thing about google and firebase.
+// This way we only have to change this one function rather than chase problems through the app if something changes
+export const getCategoriesAndDocuments = async () => {
+  const collectionRef = collection(db, "categories");
+  const q = query(collectionRef);
+
+  const querySnapShot = await getDocs(q);
+  const categoryMap = querySnapShot.docs.reduce((acc, docSnapShot) => {
+    const { title, items } = docSnapShot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+  return categoryMap
 };
 
 export const createUserDocumentFromAuth = async (
