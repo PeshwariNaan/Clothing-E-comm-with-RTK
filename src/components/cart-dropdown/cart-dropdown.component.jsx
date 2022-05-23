@@ -6,7 +6,8 @@ import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 import {
   CartDropdownContainer,
-  CartItems
+  CartItems,
+  EmptyMessage
 } from "./cart-dropdown.styles.jsx";
 
 const CartDropdown = () => {
@@ -20,9 +21,11 @@ const CartDropdown = () => {
     return (
       <CartDropdownContainer>
         <CartItems>
-          {cartItems.map((item) => (
-            <CartItem key={item.id} cartItem={item} />
-          ))}
+          {cartItems.length ? (
+            cartItems.map((item) => <CartItem key={item.id} cartItem={item} />)
+          ) : (
+            <EmptyMessage>Your cart is empty</EmptyMessage>
+          )}
         </CartItems>
         <Button onClick={goToCheckoutHandler}>GO TO CHECKOUT</Button>
       </CartDropdownContainer>
