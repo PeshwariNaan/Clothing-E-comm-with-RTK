@@ -15,20 +15,20 @@ export const CategoriesContext = createContext({
   export const CategoriesProvider = ({ children }) => {
     const [categoriesMap, setCategoriesMap] = useState({});
 
-    useEffect(() => { //Remember to use async inside the useEffect when calling an async function
-      const getCategoriesMap = async () => {
-        const categoryMap = await getCategoriesAndDocuments('categories')
-        console.log(categoryMap)
-        setCategoriesMap(categoryMap)
-      }
+   
+  useEffect(() => {
+    const getCategoriesMap = async () => {
+      const categoryMap = await getCategoriesAndDocuments();
+      console.log(categoryMap);
+      setCategoriesMap(categoryMap);
+    };
 
-      getCategoriesMap()  
-      
-    }, [])
+    getCategoriesMap();
+  }, []);
     
 
     //This was only used once but we don't want this to happen every time
-    //No need to populate the data base more than once - keep code for demonstration purposes
+    //No need to populate the database more than once - keep code for demonstration purposes
     // useEffect(() => {
     //   addCollectionAndDocuments('categories', SHOP_DATA)
     
