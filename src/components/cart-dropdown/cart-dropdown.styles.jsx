@@ -31,11 +31,4 @@ export const EmptyMessage = styled.span`
   margin: 50px auto;
 `;
 
-//   .empty-message {
-//     font-size: 18px;
-//     margin: 50px auto;
-//   }
-//   button {
-//     margin-top: auto;
-//   }
-// }
+
