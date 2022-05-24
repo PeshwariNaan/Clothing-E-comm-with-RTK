@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) => {
         if(user) {
             createUserDocumentFromAuth(user);
         }
-        console.log(user)
+      
       setCurrentUser(user)
     });
     return unsubscribe; //THis is a clean-up function that removes the listener - still a bit confusing. It must remove previously
