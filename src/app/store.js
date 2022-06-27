@@ -7,6 +7,6 @@ const reducers = {
 };
 
 export const store = configureStore({
-  reducers,
+  reducer: reducers,
   middleware: [logger],
 });
