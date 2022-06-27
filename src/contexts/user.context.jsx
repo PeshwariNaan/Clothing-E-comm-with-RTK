@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect, useReducer } from "react";
 
 import { onAuthStateChangedListener, createUserDocumentFromAuth } from "../utils/firebase/firebase.utils";
 
@@ -8,9 +8,43 @@ export const UserContext = createContext({
   setCurrentUser: () => null,
 });
 
+export const USER_ACTION_TYPES = {
+  SET_CURRENT_USER: 'SET_CURRENT_USER',
+}
+
+const userReducer = (state, action) => {
+  const {type, payload } = action
+
+  switch(type) {
+    case 'SET_CURRENT_USER':
+      return {
+        ...state,
+        currentUser: payload
+      }
+      default:
+        throw new Error('Unhandled type in the user reducer')
+  }
+}
+
+const INITIAL_STATE = {
+  currentUser: null,
+}
+
+
+
 // this is the provider which is the actual component - this is a wrapper that will wrap the components that we want to access
 export const UserProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+
+  // const [currentUser, setCurrentUser] = useState(null);
+  const [state, dispatch] = useReducer(userReducer, INITIAL_STATE)
+
+  const { currentUser } = state
+  console.log(currentUser)
+
+  const setCurrentUser = (user) => {
+    dispatch({type: USER_ACTION_TYPES.SET_CURRENT_USER, payload: user})
+  }
+
   const value = { currentUser, setCurrentUser };
 
   useEffect(() => {
