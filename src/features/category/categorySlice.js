@@ -1,24 +1,29 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils';
-
+import { createSlice } from '@reduxjs/toolkit';
+//import { getCategoriesAndDocuments } from '../../utils/firebase/firebase.utils';
 
 const initialState = {
-    categoriesMap: [],
-
-}
+  categories: [],
+};
 
 export const categorySlice = createSlice({
-    name: 'category',
-    initialState,
-    reducers: {
-        setCategoriesMap: (state, action) => {
-            state.categoriesMap = action.payload
-        }
-    }
-})
+  name: 'category',
+  initialState,
+  reducers: {
+    setCategories: (state, action) => {
+      state.categories = action.payload;
+    },
+  },
+});
 
-export const { setCategoriesMap } = categorySlice.actions
+export const { setCategories } = categorySlice.actions;
 
-export const selectCategoriesMap = (state) => state.category.categoriesMap
+//export const selectCategories = (state) => state.category.categories;
 
-export default categorySlice.reducer
+export const selectCategoriesMap = (state) =>
+  state.category.categories.reduce((acc, category) => {
+    const { title, items } = category;
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+
+export default categorySlice.reducer;
