@@ -14,7 +14,7 @@ import {
   LogoContainer,
 } from "./navigation.styles";
 
-import "./navigation.styles";
+
 
 const Navigation = () => {
   const currentUser = useSelector(selectCurrentUser)
