@@ -16,12 +16,12 @@ const CheckoutItem = ({ cartItem }) => {
   const dispatch = useDispatch()
   const { name, imageUrl, price, quantity } = cartItem;
   const cartItems = useSelector(selectCartItems)
-
+  
  
 
-  const clearItemHandler = () => dispatch(clearItemFromCart(cartItems, cartItem));
-  const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
-  const removeItemHandler = () => dispatch(removeItemFromCart(cartItems, cartItem));
+  const clearItemHandler = () => dispatch(clearItemFromCart({cartItems: cartItems, product: cartItem}));
+  const addItemHandler = () => dispatch(addItemToCart({cartItems: cartItems, product: cartItem}));
+  const removeItemHandler = () => dispatch(removeItemFromCart({cartItems: cartItems, product: cartItem}));
 
   return (
     <CheckoutItemContainer>

@@ -9,31 +9,39 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addItemToCart: (state, action) => {
-      const existingCartItem = state.cartItems.find(
-        (cartItem) => cartItem.id === action.payload.id
+    addItemToCart: (state, { payload }) => {
+      const existingCartItem = payload.cartItems.find(
+        (cartItem) => cartItem.id === payload.product.id
       );
-      if (existingCartItem)
-        state.cartItems =  state.cartItems.map((cartItem) =>
-          cartItem.id === action.payload.id
-            ? {...cartItem, quantity: cartItem.quantity + 1 }
+      console.log('existingCartItem:', existingCartItem);
+      console.log('CartItems rtk:', payload.cartItems);
+      console.log('action.payload from rtk', payload);
+      if (existingCartItem) {
+        state.cartItems = state.cartItems.map((cartItem) =>
+          cartItem.id === payload.product.id
+            ? { ...cartItem, quantity: cartItem.quantity + 1 }
             : cartItem
         );
-      state.cartItems = [...state.cartItems, { ...action.payload, quantity: 1 }];
-      console.log(state.cartItems)
+      } else {
+        state.cartItems = [
+          ...state.cartItems,
+          { ...payload.product, quantity: 1 },
+        ];
+        console.log('current cart items:', state.cartItems);
+      }
     },
 
     removeItemFromCart: (state, { payload }) => {
       const existingCartItem = state.cartItems.find(
-        (cartItem) => cartItem.id === payload.id
+        (cartItem) => cartItem.id === payload.product.id
       );
       if (existingCartItem.quantity === 1) {
         state.cartItems = state.cartItems.filter(
-          (cartItem) => cartItem.id !== payload.id
+          (cartItem) => cartItem.id !== payload.product.id
         );
       }
       state.cartItems = state.cartItems.map((cartItem) =>
-        cartItem.id === payload.id
+        cartItem.id === payload.product.id
           ? { ...cartItem, quantity: cartItem.quantity - 1 }
           : cartItem
       );
@@ -41,7 +49,7 @@ const cartSlice = createSlice({
 
     clearItemFromCart: (state, { payload }) => {
       state.cartItems = state.cartItems.filter(
-        (cartItem) => cartItem.id !== payload.id
+        (cartItem) => cartItem.id !== payload.product.id
       );
     },
 

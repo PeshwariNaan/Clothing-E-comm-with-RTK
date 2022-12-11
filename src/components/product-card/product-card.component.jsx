@@ -13,7 +13,9 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch()
   const { name, price, imageUrl } = product;
   const cartItems = useSelector(selectCartItems)
-  const addProductToCart = () => dispatch(addItemToCart(cartItems, product));
+  const addProductToCart = () => {
+    console.log('From card - cart items:', cartItems, 'product:', product)
+    dispatch(addItemToCart({cartItems: cartItems, product: product}))};
 
   return (
     <ProductCartContainer>
@@ -26,7 +28,7 @@ const ProductCard = ({ product }) => {
         buttonType={BUTTON_TYPE_CLASSES.inverted}
         onClick={addProductToCart}
       >
-        Add to card
+        Add to cart
       </Button>
     </ProductCartContainer>
   );
