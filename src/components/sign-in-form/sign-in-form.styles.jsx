@@ -3,9 +3,12 @@ import styled from 'styled-components';
 export const SignInContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 380px;
+  width: 38rem;
   h2 {
     margin: 10px 0;
+  }
+  @media(max-width: 1000px ){
+    width: 35rem;
   }
 `;
 

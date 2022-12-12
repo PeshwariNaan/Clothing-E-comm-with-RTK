@@ -18,7 +18,7 @@ export const Preview = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 2rem;
   @media(max-width: 811px){
-    column-gap: 1rem;
+    row-gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   }
 `;

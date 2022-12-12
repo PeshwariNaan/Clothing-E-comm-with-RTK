@@ -25,6 +25,7 @@ export const ProductCartContainer = styled.div`
     @media(max-width: 811px){
       top: 15rem;
       width: 75%;
+      display: flex;
   }
   }
   &:hover {
