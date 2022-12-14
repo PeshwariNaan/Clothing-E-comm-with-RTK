@@ -37,3 +37,5 @@ export const Total = styled.span`
   margin-left: auto;
   font-size: 36px;
 `;
+
+export const TestCardTable = styled

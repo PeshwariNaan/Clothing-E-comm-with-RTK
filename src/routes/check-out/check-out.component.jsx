@@ -1,7 +1,11 @@
 import { useSelector } from 'react-redux';
 
-import { selectCartItems, selectCartTotal } from '../../features/cart/cartSlice';
-
+import {
+  selectCartItems,
+  selectCartTotal,
+} from '../../features/cart/cartSlice';
+import PaymentForm from '../../components/payment-form/payment-form.component';
+import TestCardTable from '../../components/test-card-table/TestCardTable';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 
 import {
@@ -12,8 +16,8 @@ import {
 } from './check-out.styles';
 
 const Checkout = () => {
-  const cartItems = useSelector(selectCartItems)
-  const cartTotal = useSelector(selectCartTotal)
+  const cartItems = useSelector(selectCartItems);
+  const cartTotal = useSelector(selectCartTotal);
 
   return (
     <CheckoutContainer>
@@ -38,6 +42,12 @@ const Checkout = () => {
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <Total>Total: ${cartTotal}</Total>
+      {cartTotal === 0 ? null : (
+        <>
+          <TestCardTable />
+          <PaymentForm />
+        </>
+      )}
     </CheckoutContainer>
   );
 };
