@@ -44,7 +44,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github-rep](https://github.com/PeshwariNaan/rtk-v2.git)
-- Live Site URL: [Live-Link]()
+- Live Site URL: [Live-Link](https://frolicking-pasca-97775f.netlify.app)
 
 ## My process
 
@@ -89,4 +89,3 @@ There is always so much more to learn and this industry moves fast. For my conti
 
 ## Acknowledgments
 
-As always, I would like to tip my hat to the good people at Frontend Mentor and to all the students out there relentlessly coding their nights away.
