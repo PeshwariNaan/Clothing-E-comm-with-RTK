@@ -13,9 +13,6 @@ const cartSlice = createSlice({
       const existingCartItem = payload.cartItems.find(
         (cartItem) => cartItem.id === payload.product.id
       );
-      console.log('existingCartItem:', existingCartItem);
-      console.log('CartItems rtk:', payload.cartItems);
-      console.log('action.payload from rtk', payload);
       if (existingCartItem) {
         state.cartItems = state.cartItems.map((cartItem) =>
           cartItem.id === payload.product.id

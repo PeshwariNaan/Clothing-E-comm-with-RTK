@@ -1,70 +1,92 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ZTM Complete React Developer course
 
-## Available Scripts
+This is a full working project for the ZTM Complete React developer Course. The course went through a variety of technologies to build this project including react context and legacy Redux. What the course did not address was using Redux Toolkit or responsive design. I have implemented both in my project code to keep up with these very important aspects of front-end developement and to expand my own knowledge.
 
-In the project directory, you can run:
+## Table of contents
 
-### `npm start`
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Overview
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### E-Commerce Clothing Site Project
 
-### `npm run build`
+Users should be able to:
+- Use directory to navigate to appropriate shop page.
+- Sign-up or sign-in with password and email or with Google sign-in.
+- Add individual items to cart.
+- Be able to view all items in the dropdown cart.
+- Be able to view all items in checkout page as well as add, subtract, or remove items from cart.
+- View Total cost for all items
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Screenshot
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Desktop-Directory-view](src\assets\Screen-Shot-rtk-2-DT-menu.png)
+![Desktop-checkout-view](src\assets\Screen-Shot-rtk-2-DT-checkout.png)
+![Tablet-Shop-view](src\assets\Screen-Shot-rtk-2-Tablet-cat-prev.png)
+![Mobile-Directory-view](src\assets\Screen-Shot-rtk-2-mobile-menu.png)
+![Mobile-Checkout-view](src\assets\Screen-Shot-rtk-2-mobile-check-out.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Links
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Solution URL: [Github-rep](https://github.com/PeshwariNaan/rtk-v2.git)
+- Live Site URL: [Live-Link]()
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## My process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Built with
 
-## Learn More
+- [React](https://reactjs.org/) - JS library
+- [React Router 6](https://github.com/remix-run/react-router/blob/main/docs/getting-started/tutorial.md)
+- Firebase / Firestore
+- [Redux Toolkit for state management](https://redux-toolkit.js.org/)
+- CSS Grid
+- Flexbox
+- [Styled Components](https://styled-components.com/) - For styles
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I learned
 
-### Code Splitting
+This project wa a great start with learning and Firebase / Firestore. I had minimal exposure to Firebase in the past but this project taught me how to easily set up user authentiaction, sign-in/up with third party authorization, and create collections and documents in Firestore. In addition, I learned how to fetch data from different collections and work with maps and data arrays to display the data on the site.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+I learned a great deal about state management using everything from React context, legacy Redux with Thunk and Sagas, as well as teaching myself Redux Toolkit. I have been using Redux for the last couple years but going back through the fundamentals and working through the advanced aspects again really helped solidify my knowledge and made learning RTK fairly easy. It was great to see the parallels of the different state management approaches to help me ba able to choose which one is a good fit for future projects.
 
-### Analyzing the Bundle Size
+Advancing my knowledge with React-router 6. I learned how to create nested routes and how to make the navigation elegant and compact.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Continued development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+There is always so much more to learn and this industry moves fast. For my continued developement at this point I see a lot of developers using Typescript and I really want to become more proficient with this language. 
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [Firestore-data-reference](https://cloud.google.com/firestore/docs/samples/firestore-data-reference-subcollection) - This helped me with understanding the syntax to query/create collections and documents and will definitely use it going forward with any firebase projects.
+- [Redux Toolkit for state management](https://redux-toolkit.js.org/)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Author
+
+- Github - [J.D. Browne](https://www.your-site.com)
+- Frontend Mentor - [@PeshwariNaan](https://www.frontendmentor.io/profile/PeshwariNaan)
+
+
+## Acknowledgments
+
+As always, I would like to tip my hat to the good people at Frontend Mentor and to all the students out there relentlessly coding their nights away.

@@ -4,6 +4,7 @@ import userReducer from '../features/user/userSlice';
 import categoriesReducer from '../features/category/categorySlice'
 import cartReducer from '../features/cart/cartSlice'
 
+
 const reducers = {
     user: userReducer,
     category: categoriesReducer,
@@ -14,3 +15,5 @@ export const store = configureStore({
   reducer: reducers,
   middleware: [logger],
 });
+
+
