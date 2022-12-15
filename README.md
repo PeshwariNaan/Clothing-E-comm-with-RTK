@@ -61,6 +61,7 @@ Users should be able to:
 
 ### What I learned
 
+
 This project wa a great start with learning and Firebase / Firestore. I had minimal exposure to Firebase in the past but this project taught me how to easily set up user authentiaction, sign-in/up with third party authorization, and create collections and documents in Firestore. In addition, I learned how to fetch data from different collections and work with maps and data arrays to display the data on the site.
 
 I learned a great deal about state management using everything from React context, legacy Redux with Thunk and Sagas, as well as teaching myself Redux Toolkit. I have been using Redux for the last couple years but going back through the fundamentals and working through the advanced aspects again really helped solidify my knowledge and made learning RTK fairly easy. It was great to see the parallels of the different state management approaches to help me ba able to choose which one is a good fit for future projects.
@@ -70,7 +71,7 @@ Advancing my knowledge with React-router 6. I learned how to create nested route
 
 ### Continued development
 
-There is always so much more to learn and this industry moves fast. For my continued developement at this point I see a lot of developers using Typescript and I really want to become more proficient with this language. 
+There is always so much more to learn and this industry moves fast. For my continued developement at this point I see a lot of developers using Typescript and I want to become more proficient with this language. Im starting with migrating some existiing projects over to typescript to get the grasp of the fundamentals.
 
 
 
@@ -89,3 +90,4 @@ There is always so much more to learn and this industry moves fast. For my conti
 
 ## Acknowledgments
 
+I would like to thank the people at ZTM for making some great courses and giving the opportunity for people everywhere to learn new skills that can change lives.
