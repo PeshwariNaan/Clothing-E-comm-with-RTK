@@ -1,5 +1,5 @@
 
-# ZTM Complete React Developer course
+# Full working eCommerce Project from ZTM Complete React Developer course
 
 This is a full working project for the ZTM Complete React developer Course. The course went through a variety of technologies to build this project including react context and legacy Redux. What the course did not address was using Redux Toolkit or responsive design. I have implemented both in my project code to keep up with these very important aspects of front-end developement and to expand my own knowledge.
 
