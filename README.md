@@ -34,11 +34,11 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop-Directory-view](src\assets\Screen-Shot-rtk-2-DT-menu.png)
-![Desktop-checkout-view](src\assets\Screen-Shot-rtk-2-DT-checkout.png)
-![Tablet-Shop-view](src\assets\Screen-Shot-rtk-2-Tablet-cat-prev.png)
-![Mobile-Directory-view](src\assets\Screen-Shot-rtk-2-mobile-menu.png)
-![Mobile-Checkout-view](src\assets\Screen-Shot-rtk-2-mobile-check-out.png)
+![Desktop-Directory-view](src/assets/Screen-Shot-rtk-2-DT-menu.png)
+![Desktop-checkout-view](src/assets/Screen-Shot-rtk-2-DT-checkout.png)
+![Tablet-Shop-view](src/assets/Screen-Shot-rtk-2-Tablet-cat-prev.png)
+![Mobile-Directory-view](src/assets/Screen-Shot-rtk-2-mobile-menu.png)
+![Mobile-Checkout-view](src/assets/Screen-Shot-rtk-2-mobile-check-out.png)
 
 
 ### Links
